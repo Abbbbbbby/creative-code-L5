@@ -18,7 +18,7 @@ function draw()
   background(104, 208, 252)
 
   -- coordinates
-  text("x: "..mouseX.." y: "..mouseY, 100, 100)
+  -- text("x: "..mouseX.." y: "..mouseY, 100, 100)
   
   -- chiikawa
   fill(230, 218, 218)
