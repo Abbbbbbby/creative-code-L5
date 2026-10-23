@@ -29,18 +29,19 @@ function cloudMaker(x, y)
   ellipse(x - 40, y + 10, 60, 50)
   ellipse(x - 20, y + 30, 40, 20)
   ellipse(x + 20, y + 30, 40, 20)
+  ellipse(x, y + 10, 75, 50)
 end
 
 function draw()
   image(bg, 0, 0, 800, 600)
 
   -- fish
-  fishMaker(200, 460, 219, 79, 79)
+  fishMaker(250, 470, 219, 79, 79)
   fishMaker(400, 510, 224, 127, 0)
 
   -- clouds
-  cloudMaker(80, 45)
-  cloudMaker(480, 95)
+  cloudMaker(140, 60)
+  cloudMaker(490, 95)
 
   -- sun
   push()
