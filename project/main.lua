@@ -41,7 +41,7 @@ function setup()
 
   -- arrays with each layer image; sauceLayers is for layers containing sauce/cream type of layering, and otherLayers includes everything else
   -- the reason for seperating them is for the sake of organization and layering (within the code)
-  sauceLayers = {layer1, layer8, layer9, layer10, layer11, layer12}
+  sauceLayers = {layer1, layer9, layer10, layer11, layer12}
   otherLayers = {layer2, layer3, layer4, layer5, layer6, layer7, layer13, layer14, layer15}
 
   -- toppings
@@ -59,8 +59,11 @@ function setup()
   frontToppings = {topping7, topping8}
   otherToppings = {topping1, topping2, topping3, topping4, topping5, topping6}
 
-  -- load the first instance of the base image and the randomized expression
+  -- draw the first instance of each part
+  layerMaker()
   image(base, 0, 0, 500, 625)
+  toppingsMaker()
+  image(glass, 0, 0, 500, 625)
   image(random(expressions), 0, 0, 500, 625)
 end
 
@@ -80,19 +83,18 @@ end
 
 function toppingsMaker()
   -- variables to randomize the start and range used in the following for loop
-  start = random(1, 5)
-  range = random(start, 6)
+  start = random(1, 6)
+  range = random(start, 7)
 
   for i = start, range, 1 do
-    --image(random(otherToppings), 0, 0, 500, 625)
-    image(otherToppings[i], 0, 0, 500, 625)
+    image(random(otherToppings), 0, 0, 500, 625)
   end
 
   -- randomizes which image from frontToppings is drawn
   image(random(frontToppings), 0, 0, 500, 625)
 
   -- determines if topping9 will be drawn on the canvas using random()
-  if random() == 0 then
+  if random(0, 2) == 0 then
     image(topping9, 0, 0, 500, 625)
   end
 end
@@ -100,7 +102,7 @@ end
 -- draw function
 function draw()
   -- changing every 300 frames
-  if frameCount % 60 == 0 then
+  if frameCount % 300 == 0 then
     -- clear the canvas
     clear()
     background(255)
