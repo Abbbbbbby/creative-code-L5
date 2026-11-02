@@ -101,8 +101,8 @@ end
 
 -- draw function
 function draw()
-  -- changing every 300 frames
-  if frameCount % 300 == 0 then
+  -- clear and draw everything again after every 120 frames
+  if frameCount % 120 == 0 then
     -- clear the canvas
     clear()
     background(255)
